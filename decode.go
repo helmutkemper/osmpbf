@@ -15,7 +15,7 @@ import (
 	"time"
 
 	"github.com/golang/protobuf/proto"
-	"github.com/qedus/osmpbf/OSMPBF"
+	"github.com/helmutkemper/osmpbf/OSMPBF"
 )
 
 const (
@@ -367,10 +367,10 @@ func (dec *Decoder) decodeOSMHeader(blob *OSMPBF.Blob) error {
 
 	// Read properties to header struct
 	header := &Header{
-		RequiredFeatures: headerBlock.GetRequiredFeatures(),
-		OptionalFeatures: headerBlock.GetOptionalFeatures(),
-		WritingProgram:   headerBlock.GetWritingprogram(),
-		Source:           headerBlock.GetSource(),
+		RequiredFeatures:                 headerBlock.GetRequiredFeatures(),
+		OptionalFeatures:                 headerBlock.GetOptionalFeatures(),
+		WritingProgram:                   headerBlock.GetWritingprogram(),
+		Source:                           headerBlock.GetSource(),
 		OsmosisReplicationBaseUrl:        headerBlock.GetOsmosisReplicationBaseUrl(),
 		OsmosisReplicationSequenceNumber: headerBlock.GetOsmosisReplicationSequenceNumber(),
 	}
